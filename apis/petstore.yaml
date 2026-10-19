@@ -5,9 +5,12 @@ info:
   description: >-
     Demo API for the Redocly <-> GitHub <-> SwaggerHub two-way sync POC.
 servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/xyz-cb7-d78/Petstore-POC/1.0.0
   - url: https://api.example.com/v1
 paths:
-  /pets:
+   /pets:
     get:
       summary: List pets
       operationId: listPets
@@ -20,6 +23,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Pet'
+    post:
+      summary: Create a pet
+      operationId: createPet
+      responses:
+        '201':
+          description: Created
 components:
   schemas:
     Pet:
