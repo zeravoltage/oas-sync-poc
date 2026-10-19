@@ -29,6 +29,12 @@ paths:
       responses:
         '201':
           description: Created
+    delete:
+      summary: delete a Pet
+      operationId: deleteId
+      responses: 
+        '200':
+          description: delted
 components:
   schemas:
     Pet:
